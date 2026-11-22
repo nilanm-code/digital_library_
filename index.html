@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Library Navigation</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f5f3;
+    }
+
+    /* Navigation bar: flex container */
+    .navbar {
+      display: flex;                      /* display: flex */
+      flex-direction: row;                /* items in a row */
+      justify-content: space-between;     /* logo left, links right */
+      align-items: center;                /* vertical centring */
+      flex-wrap: wrap;                    /* wrap if space runs out */
+      gap: 15px;                          /* space between items */
+      background-color: #16423c;
+      padding: 12px 24px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Links list: also a flex container */
+    .menu {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+    }
+    .menu a:hover { background-color: #2f6b5e; }
+
+    .menu a.join { background-color: #b5832a; }
+    .menu a.join:hover { background-color: #d9a441; }
+
+    /* Tablet: smaller gaps */
+    @media (max-width: 768px) {
+      .navbar { padding: 12px 16px; }
+      .menu a { padding: 8px 10px; }
+    }
+
+    /* Mobile: stack everything in a column */
+    @media (max-width: 520px) {
+      .navbar {
+        flex-direction: column;           /* flex-direction: column */
+        align-items: flex-start;
+      }
+      .menu {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 4px;
+      }
+      .menu a { text-align: left; }
+    }
+
+    /* Sample page content */
+    main { padding: 24px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="#home">Digital Library</a>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="join" href="#membership">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to the Digital Library</h1>
+    <p>Resize the browser window to see the menu change layout.</p>
+  </main>
+
+</body>
+</html>
